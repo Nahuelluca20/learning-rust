@@ -1,4 +1,4 @@
-fn main() {
+fn loop_lesson() {
     let number_1 = 120;
     let number_2 = 159;
 
