@@ -1,4 +1,4 @@
-fn main() {
+fn conditionals() {
     // Obtener la edad y convertirlo a string
     println!("Enter your age:");
 
