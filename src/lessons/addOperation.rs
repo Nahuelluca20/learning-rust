@@ -1,5 +1,5 @@
 use regex::Regex;
-fn main() {
+fn addOperation() {
     println!("Hello, world!");
 
     // Regex
