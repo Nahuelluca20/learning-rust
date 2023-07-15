@@ -1,36 +1,24 @@
-use regex::Regex;
 fn main() {
-    println!("Hello, world!");
+    let mut names: Vec<String> = Vec::new();
 
-    // Regex
-    let re_add = Regex::new(r"(\d+)\s?\+\s?(\d+)").unwrap();
-    let re_mult = Regex::new(r"(\d+)\s?\*\s?(\d+)").unwrap();
+    for _i in 0..3 {
+        let mut name: String = String::new();
 
-    // get data from user
-    println!("Prease, enter your expression");
-    let mut expression = String::new();
-    std::io::stdin().read_line(&mut expression).unwrap();
+        println!("Please enter your name");
+        std::io::stdin().read_line(&mut name).unwrap();
 
-    loop {
-        let caps = re_add.captures(expression.as_str());
-
-        if caps.is_none() {
-            break;
-        }
-
-        let caps = caps.unwrap();
-
-        let caps_expression: &str = caps.get(0).unwrap().as_str();
-        let left_value: i32 = caps.get(1).unwrap().as_str().parse::<i32>().unwrap();
-        let right_value: i32 = caps.get(2).unwrap().as_str().parse::<i32>().unwrap();
-
-        let addition: i32 = left_value + right_value;
-
-        expression = expression.replace(caps_expression, &addition.to_string());
+        names.push(name);
     }
 
-    // Operations
+    println!("{:?}", names);
+    println!("{}", names[0]);
+    println!("{}", names.len());
 
-    // show result
-    println!("Result: \n{} ", expression);
+    for name in names {
+        println!("The name is {}", name);
+    }
+
+    let hello = ["H", "e", "l", "l", "o"];
+    println!("{}", hello[0]);
+
 }
